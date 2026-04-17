@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-app3
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/patilpreet21/argocd-child-app3.git
+    targetRevision: HEAD
+    path: databases
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
