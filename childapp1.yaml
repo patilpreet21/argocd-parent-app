@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/patilpreet21/argocd-child-app1.git
     targetRevision: HEAD
-    path: childapp1
+    path: microservice1
   destination:
     server: https://kubernetes.default.svc
     namespace: default
